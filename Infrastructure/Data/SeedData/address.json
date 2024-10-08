@@ -1,0 +1,62 @@
+[
+  {
+    "StreetName": "123 Main Street",
+    "Suburb": "Central",
+    "City": "Johannesburg",
+    "PostalCode": "2000"
+  },
+  {
+    "StreetName": "456 Park Avenue",
+    "Suburb": "Sandton",
+    "City": "Johannesburg",
+    "PostalCode": "2196"
+  },
+  {
+    "StreetName": "789 High Street",
+    "Suburb": "Durban Central",
+    "City": "Durban",
+    "PostalCode": "4001"
+  },
+  {
+    "StreetName": "101 Waterfront Road",
+    "Suburb": "V&A Waterfront",
+    "City": "Cape Town",
+    "PostalCode": "8001"
+  },
+  {
+    "StreetName": "202 Queen Street",
+    "Suburb": "Port Elizabeth Central",
+    "City": "Port Elizabeth",
+    "PostalCode": "6001"
+  },
+  {
+    "StreetName": "303 King Street",
+    "Suburb": "Pietermaritzburg",
+    "City": "Pietermaritzburg",
+    "PostalCode": "3201"
+  },
+  {
+    "StreetName": "404 Church Street",
+    "Suburb": "Bloemfontein",
+    "City": "Bloemfontein",
+    "PostalCode": "9300"
+  },
+  {
+    "StreetName": "505 Green Avenue",
+    "Suburb": "Pretoria Central",
+    "City": "Pretoria",
+    "PostalCode": "0002"
+  },
+  {
+    "StreetName": "606 Olive Road",
+    "Suburb": "Nelspruit",
+    "City": "Mbombela",
+    "PostalCode": "1200"
+  },
+  {
+    "StreetName": "707 Willow Lane",
+    "Suburb": "George",
+    "City": "George",
+    "PostalCode": "6529"
+  }
+]

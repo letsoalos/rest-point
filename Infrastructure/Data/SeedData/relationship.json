@@ -1,0 +1,34 @@
+[
+  {
+    "Name": "Father",
+    "Description": "The male parent of the client."
+  },
+  {
+    "Name": "Mother",
+    "Description": "The female parent of the client."
+  },
+  {
+    "Name": "Sibling",
+    "Description": "A brother or sister of the client."
+  },
+  {
+    "Name": "Spouse",
+    "Description": "The married partner of the client."
+  },
+  {
+    "Name": "Child",
+    "Description": "A son or daughter of the client."
+  },
+  {
+    "Name": "Guardian",
+    "Description": "An individual responsible for the care of the client."
+  },
+  {
+    "Name": "Friend",
+    "Description": "A person who is a close associate of the client."
+  },
+  {
+    "Name": "Relative",
+    "Description": "A member of the client’s extended family."
+  }
+]

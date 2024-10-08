@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "Pending"
+  },
+  {
+    "Name": "Completed"
+  },
+  {
+    "Name": "Failed"
+  },
+  {
+    "Name": "Refunded"
+  },
+  {
+    "Name": "Canceled"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "ClientPremiumId": 1,
+    "Amount": 50.00,
+    "AppliedDate": "2024-09-01T10:30:00",
+    "Description": "Late fee for missed August 2024 premium"
+  },
+  {
+    "ClientPremiumId": 2,
+    "Amount": 75.00,
+    "AppliedDate": "2024-09-10T15:45:00",
+    "Description": "Late fee for missed July 2024 premium"
+  },
+  {
+    "ClientPremiumId": 3,
+    "Amount": 30.00,
+    "AppliedDate": "2024-09-15T09:20:00",
+    "Description": "Late fee for missed June 2024 premium"
+  },
+  {
+    "ClientPremiumId": 4,
+    "Amount": 45.00,
+    "AppliedDate": "2024-09-20T13:00:00",
+    "Description": "Late fee for missed September 2024 premium"
+  },
+  {
+    "ClientPremiumId": 5,
+    "Amount": 60.00,
+    "AppliedDate": "2024-09-25T11:15:00",
+    "Description": "Late fee for missed October 2024 premium"
+  }
+]

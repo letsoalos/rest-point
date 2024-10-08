@@ -19,6 +19,7 @@ public class Client : BaseEntity
     public required string EmergencyContactName { get; set; }
     public required string EmergencyContactPhoneNumber { get; set; }
     public int ClientStatusId { get; set; }
+    public int? BurialSocietyId { get; set; }
     public bool Consent { get; set; }
     public required string ClientReferenceNumber { get; set; }
     public DateTime CreatedDate { get; set; }
@@ -28,8 +29,9 @@ public class Client : BaseEntity
     public DateTime? ModifiedDate { get; set; }
     public string? ModifiedBy  { get; set; }
 
-    public required Address Address { get; set; }
-    public required Gender Gender { get; set; }
-    public required DocumentType DocumentType { get; set; }
-    public required ClientStatus ClientStatus { get; set; }
+    public Address? Address { get; set; }
+    public Gender? Gender { get; set; }
+    public DocumentType? DocumentType { get; set; }
+    public ClientStatus? ClientStatus { get; set; } 
+    public BurialSociety? BurialSociety { get; set; }
 }

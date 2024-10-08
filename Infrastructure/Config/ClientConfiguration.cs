@@ -27,5 +27,9 @@ public class ClientConfiguration : IEntityTypeConfiguration<Client>
                .WithMany()
                .HasForeignKey(x => x.ClientStatusId)
                .OnDelete(DeleteBehavior.NoAction);
+       builder.HasOne(x => x.BurialSociety)
+               .WithMany()
+               .HasForeignKey(x => x.BurialSocietyId)
+               .OnDelete(DeleteBehavior.SetNull);
     }
 }

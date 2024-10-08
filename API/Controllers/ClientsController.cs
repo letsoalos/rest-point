@@ -1,36 +1,42 @@
+using API.Dtos;
+using AutoMapper;
 using Core.Entities;
-using Infrastructure.Data;
+using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-public class ClientsController(DataContext context) : BaseApiController
+public class ClientsController(IClientRepository repo, IMapper mapper) : BaseApiController
 {
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Client>>> GetClients()
+    public async Task<ActionResult<IReadOnlyList<ClientDto>>> GetClients()
     {
-        return await context.Clients.ToListAsync();
+        var clients = await repo.GetClientsAsync();
+
+        return Ok(mapper.Map<IReadOnlyList<ClientDto>>(clients));
     }
 
     [HttpGet("{id:int}")]
-    public async Task<ActionResult<Client>> GetClient(int id)
+    public async Task<ActionResult<ClientDto>> GetClient(int id)
     {
-        var client = await context.Clients.FindAsync(id);
+        var client = await repo.GetClientByIdAsync(id);
 
         if (client == null) return NotFound();
 
-        return client;
+        return mapper.Map<Client, ClientDto>(client);
     }
 
     [HttpPost]
     public async Task<ActionResult<Client>> CreateClient(Client client)
     {
-        context.Clients.Add(client);
+        repo.AddClient(client);
 
-        await context.SaveChangesAsync();
+        if (await repo.SaveChangesAsync())
+        {
+            return CreatedAtAction("GetClient", new {id = client.Id}, client);
+        }
 
-        return client;
+        return BadRequest("Problem adding client");
     }
 
     [HttpPut("{id:int}")]
@@ -38,29 +44,36 @@ public class ClientsController(DataContext context) : BaseApiController
     {
         if (client.Id != id || !ClientExists(id)) return BadRequest($"Client with ID {id} no longer exists");
 
-        context.Entry(client).State = EntityState.Modified;
-        await context.SaveChangesAsync();
+        repo.UpdateClient(client);
 
-        return NoContent();
+        if (await repo.SaveChangesAsync())
+        {
+            return NoContent();
+        }
+
+        return BadRequest("Problem updating the client");
     }
 
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> DeleteClient(int id)
     {
-        var client = await context.Clients.FindAsync(id);
+        var client = await repo.GetClientByIdAsync(id);
 
         if (client == null) return NotFound();
 
-        context.Clients.Remove(client);
+        repo.DeleteClient(client);
 
-        await context.SaveChangesAsync();
+        if (await repo.SaveChangesAsync())
+        {
+            return NoContent();
+        }
 
-        return NoContent();
+        return BadRequest("Problem deleting the client");
     }
 
 
     private bool ClientExists(int id)
     {
-        return context.Clients.Any(x => x.Id == id);
+        return repo.ClientExists(id);
     }
 }

@@ -21,7 +21,7 @@ public class FamilyMember : BaseEntity
     public DateTime? ModifiedDate { get; set; }
     public string? ModifiedBy { get; set; }
 
-    public required Client Client { get; set; }
-    public required Relationship Relationship { get; set; }
-    public required Gender Gender { get; set; }
+    public Client? Client { get; set; }
+    public Relationship? Relationship { get; set; }
+    public Gender? Gender { get; set; }
 }

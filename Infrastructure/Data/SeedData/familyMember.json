@@ -1,0 +1,62 @@
+[
+    {
+        "ClientId": 1,
+        "FirstName": "John",
+        "LastName": "Doe",
+        "GenderId": 1,
+        "RelationshipId": 1,
+        "DateOfBirth": "1985-06-15T00:00:00",
+        "PhoneNumber": "0712345678",
+        "Email": "john.doe@example.com",
+        "IsBeneficiary": true,
+        "CreatedDate": "2024-01-01T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientId": 1,
+        "FirstName": "Jane",
+        "LastName": "Doe",
+        "GenderId": 2,
+        "RelationshipId": 2,
+        "DateOfBirth": "1987-03-25T00:00:00",
+        "PhoneNumber": "0723456789",
+        "Email": "jane.doe@example.com",
+        "IsBeneficiary": true,
+        "CreatedDate": "2024-01-02T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientId": 2,
+        "FirstName": "Emily",
+        "LastName": "Smith",
+        "GenderId": 2,
+        "RelationshipId": 3,
+        "DateOfBirth": "2010-11-11T00:00:00",
+        "PhoneNumber": null,
+        "Email": null,
+        "IsBeneficiary": false,
+        "CreatedDate": "2024-01-03T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientId": 3,
+        "FirstName": "Michael",
+        "LastName": "Brown",
+        "GenderId": 1,
+        "RelationshipId": 1,
+        "DateOfBirth": "1975-09-30T00:00:00",
+        "PhoneNumber": "0734567890",
+        "Email": "michael.brown@example.com",
+        "IsBeneficiary": true,
+        "CreatedDate": "2024-01-04T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    }
+]

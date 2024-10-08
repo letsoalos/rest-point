@@ -1,0 +1,37 @@
+[
+  {
+    "Name": "Active",
+    "Description": "Client is active and in good standing.",
+    "IsActive": true
+  },
+  {
+    "Name": "Suspended",
+    "Description": "Client account has been temporarily suspended due to non-payment or other issues.",
+    "IsActive": true
+  },
+  {
+    "Name": "Terminated",
+    "Description": "Client account has been permanently terminated.",
+    "IsActive": false
+  },
+  {
+    "Name": "Pending Verification",
+    "Description": "Client's information is pending verification.",
+    "IsActive": true
+  },
+  {
+    "Name": "Inactive",
+    "Description": "Client account is inactive due to prolonged inactivity or by request.",
+    "IsActive": false
+  },
+  {
+    "Name": "Deceased",
+    "Description": "Client has passed away.",
+    "IsActive": false
+  },
+  {
+    "Name": "Fraudulent",
+    "Description": "Client account has been flagged for fraudulent activity.",
+    "IsActive": false
+  }
+]

@@ -17,8 +17,8 @@ public class Payment : BaseEntity
     public DateTime? ModifiedDate { get; set; }
     public string? ModifiedBy  { get; set; }
 
-    public required ClientPremium ClientPremium { get; set; }
-    public required PaymentMethod PaymentMethod { get; set; }
-    public required PaymentStatus PaymentStatus { get; set; }
+    public ClientPremium? ClientPremium { get; set; }
+    public PaymentMethod? PaymentMethod { get; set; }
+    public PaymentStatus? PaymentStatus { get; set; }
 
 }

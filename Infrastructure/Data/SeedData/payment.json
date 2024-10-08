@@ -1,0 +1,44 @@
+[
+    {
+        "ClientPremiumId": 1,
+        "PaymentDate": "2024-10-05T10:00:00",
+        "AmountPaid": 150.00,
+        "PaymentMethodId": 1,
+        "TransactionId": "TXN123456789",
+        "PaymentStatusId": 1,
+        "InvoiceNumber": "INV-1001",
+        "NextPaymentDueDate": "2024-11-05T00:00:00",
+        "CreatedDate": "2024-10-05T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientPremiumId": 2,
+        "PaymentDate": "2024-10-05T11:00:00",
+        "AmountPaid": 200.00,
+        "PaymentMethodId": 2,
+        "TransactionId": "TXN987654321",
+        "PaymentStatusId": 2,
+        "InvoiceNumber": "INV-1002",
+        "NextPaymentDueDate": "2024-11-05T00:00:00",
+        "CreatedDate": "2024-10-05T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientPremiumId": 3,
+        "PaymentDate": "2024-10-05T12:00:00",
+        "AmountPaid": 300.00,
+        "PaymentMethodId": 3,
+        "TransactionId": "TXN555555555",
+        "PaymentStatusId": 3,
+        "InvoiceNumber": "INV-1003",
+        "NextPaymentDueDate": "2024-11-05T00:00:00",
+        "CreatedDate": "2024-10-05T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    }
+]

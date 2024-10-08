@@ -28,6 +28,22 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "BurialSocieties",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ContactPerson = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BurialSocieties", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ClientStatuses",
                 columns: table => new
                 {
@@ -100,7 +116,7 @@ namespace Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PaymentMethod",
+                name: "PaymentMethods",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -109,7 +125,7 @@ namespace Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PaymentMethod", x => x.Id);
+                    table.PrimaryKey("PK_PaymentMethods", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -188,6 +204,7 @@ namespace Infrastructure.Migrations
                     EmergencyContactName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     EmergencyContactPhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ClientStatusId = table.Column<int>(type: "int", nullable: false),
+                    BurialSocietyId = table.Column<int>(type: "int", nullable: true),
                     Consent = table.Column<bool>(type: "bit", nullable: false),
                     ClientReferenceNumber = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -205,6 +222,12 @@ namespace Infrastructure.Migrations
                         principalTable: "Addresses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Clients_BurialSocieties_BurialSocietyId",
+                        column: x => x.BurialSocietyId,
+                        principalTable: "BurialSocieties",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_Clients_ClientStatuses_ClientStatusId",
                         column: x => x.ClientStatusId,
@@ -233,11 +256,18 @@ namespace Infrastructure.Migrations
                     TotalAmountPaid = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PaymentFrequencyId = table.Column<int>(type: "int", nullable: false),
+                    BurialSocietyId = table.Column<int>(type: "int", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ClientPremia", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ClientPremia_BurialSocieties_BurialSocietyId",
+                        column: x => x.BurialSocietyId,
+                        principalTable: "BurialSocieties",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_ClientPremia_Clients_ClientId",
                         column: x => x.ClientId,
@@ -354,9 +384,9 @@ namespace Infrastructure.Migrations
                         principalTable: "Clients",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_PaymentHistories_PaymentMethod_PaymentMethodId",
+                        name: "FK_PaymentHistories_PaymentMethods_PaymentMethodId",
                         column: x => x.PaymentMethodId,
-                        principalTable: "PaymentMethod",
+                        principalTable: "PaymentMethods",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_PaymentHistories_PaymentStatuses_PaymentStatusId",
@@ -414,9 +444,9 @@ namespace Infrastructure.Migrations
                         principalTable: "ClientPremia",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Payments_PaymentMethod_PaymentMethodId",
+                        name: "FK_Payments_PaymentMethods_PaymentMethodId",
                         column: x => x.PaymentMethodId,
-                        principalTable: "PaymentMethod",
+                        principalTable: "PaymentMethods",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Payments_PaymentStatuses_PaymentStatusId",
@@ -424,6 +454,11 @@ namespace Infrastructure.Migrations
                         principalTable: "PaymentStatuses",
                         principalColumn: "Id");
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ClientPremia_BurialSocietyId",
+                table: "ClientPremia",
+                column: "BurialSocietyId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ClientPremia_ClientId",
@@ -444,6 +479,11 @@ namespace Infrastructure.Migrations
                 name: "IX_Clients_AddressId",
                 table: "Clients",
                 column: "AddressId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Clients_BurialSocietyId",
+                table: "Clients",
+                column: "BurialSocietyId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Clients_ClientStatusId",
@@ -552,7 +592,7 @@ namespace Infrastructure.Migrations
                 name: "ClientPremia");
 
             migrationBuilder.DropTable(
-                name: "PaymentMethod");
+                name: "PaymentMethods");
 
             migrationBuilder.DropTable(
                 name: "PaymentStatuses");
@@ -568,6 +608,9 @@ namespace Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Addresses");
+
+            migrationBuilder.DropTable(
+                name: "BurialSocieties");
 
             migrationBuilder.DropTable(
                 name: "ClientStatuses");

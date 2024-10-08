@@ -20,5 +20,9 @@ public class ClientPremiumConfiguration : IEntityTypeConfiguration<ClientPremium
                .WithMany()
                .HasForeignKey(x => x.PaymentFrequencyId)
                .OnDelete(DeleteBehavior.NoAction);
+       builder.HasOne(x => x.BurialSociety)
+              .WithMany()
+              .HasForeignKey(x => x.BurialSocietyId)
+              .OnDelete(DeleteBehavior.SetNull); 
     }
 }

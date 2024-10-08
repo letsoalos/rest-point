@@ -1,0 +1,41 @@
+[
+    {
+        "ClientId": 1,
+        "PaymentDate": "2024-10-01T10:00:00",
+        "TotalAmountPaid": 150.00,
+        "PaymentMethodId": 1,
+        "ReferenceNumber": "REF-1001",
+        "Description": "Monthly subscription payment.",
+        "PaymentStatusId": 1,
+        "CreatedDate": "2024-10-01T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientId": 2,
+        "PaymentDate": "2024-10-02T11:00:00",
+        "TotalAmountPaid": 200.00,
+        "PaymentMethodId": 2,
+        "ReferenceNumber": "REF-1002",
+        "Description": "Annual premium payment.",
+        "PaymentStatusId": 2,
+        "CreatedDate": "2024-10-02T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientId": 3,
+        "PaymentDate": "2024-10-03T12:00:00",
+        "TotalAmountPaid": 300.00,
+        "PaymentMethodId": 3,
+        "ReferenceNumber": "REF-1003",
+        "Description": "One-time payment for additional services.",
+        "PaymentStatusId": 3,
+        "CreatedDate": "2024-10-03T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    }
+]

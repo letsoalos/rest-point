@@ -1,0 +1,38 @@
+[
+    {
+        "ClientId": 1,
+        "ServiceDate": "2024-10-15T10:00:00",
+        "Location": "Main Hall, Cemetery Road, Cape Town",
+        "ServiceTypeId": 1,
+        "Minister": "Rev. John Smith",
+        "AdditionalNotes": "Please ensure flowers are arranged before the service.",
+        "CreatedDate": "2024-10-05T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientId": 2,
+        "ServiceDate": "2024-10-20T11:00:00",
+        "Location": "Cremation Center, Johannesburg",
+        "ServiceTypeId": 2,
+        "Minister": "Pastor Emily Johnson",
+        "AdditionalNotes": "Family members to arrive by 10:30 AM.",
+        "CreatedDate": "2024-10-05T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    },
+    {
+        "ClientId": 3,
+        "ServiceDate": "2024-10-25T14:00:00",
+        "Location": "St. Paul's Church, Durban",
+        "ServiceTypeId": 1,
+        "Minister": null,
+        "AdditionalNotes": "Refreshments to be served after the service.",
+        "CreatedDate": "2024-10-05T12:00:00",
+        "CreatedBy": "admin",
+        "ModifiedDate": null,
+        "ModifiedBy": null
+    }
+]

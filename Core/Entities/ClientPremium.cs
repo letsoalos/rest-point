@@ -8,9 +8,11 @@ public class ClientPremium : BaseEntity
     public decimal TotalAmountPaid { get; set; }
     public DateTime StartDate { get; set; }
     public int PaymentFrequencyId { get; set; }
+    public int? BurialSocietyId { get; set; } 
     public bool IsActive { get; set; }
 
-    public required Client Client { get; set; }
-    public required PremiumPlan PremiumPlan { get; set; } 
-    public required PaymentFrequency PaymentFrequency { get; set; }  
+    public Client? Client { get; set; }
+    public PremiumPlan? PremiumPlan { get; set; } 
+    public PaymentFrequency? PaymentFrequency { get; set; }  
+    public BurialSociety? BurialSociety { get; set; }
 }

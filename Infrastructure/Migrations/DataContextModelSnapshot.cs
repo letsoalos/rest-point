@@ -30,6 +30,9 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("BurialSocietyId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
@@ -49,6 +52,8 @@ namespace Infrastructure.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BurialSocietyId");
 
                     b.HasIndex("ClientId");
 
@@ -92,6 +97,32 @@ namespace Infrastructure.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("Core.Entities.BurialSociety", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ContactPerson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BurialSocieties");
+                });
+
             modelBuilder.Entity("Core.Entities.Client", b =>
                 {
                     b.Property<int>("Id")
@@ -101,6 +132,9 @@ namespace Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AddressId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BurialSocietyId")
                         .HasColumnType("int");
 
                     b.Property<string>("ClientReferenceNumber")
@@ -174,6 +208,8 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AddressId");
+
+                    b.HasIndex("BurialSocietyId");
 
                     b.HasIndex("ClientStatusId");
 
@@ -579,7 +615,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PaymentMethod");
+                    b.ToTable("PaymentMethods");
                 });
 
             modelBuilder.Entity("Core.Entities._LookUps.PaymentStatus", b =>
@@ -678,6 +714,11 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("ClientPremium", b =>
                 {
+                    b.HasOne("Core.Entities.BurialSociety", "BurialSociety")
+                        .WithMany()
+                        .HasForeignKey("BurialSocietyId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
                     b.HasOne("Core.Entities.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
@@ -696,6 +737,8 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.Navigation("BurialSociety");
+
                     b.Navigation("Client");
 
                     b.Navigation("PaymentFrequency");
@@ -710,6 +753,11 @@ namespace Infrastructure.Migrations
                         .HasForeignKey("AddressId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Core.Entities.BurialSociety", "BurialSociety")
+                        .WithMany()
+                        .HasForeignKey("BurialSocietyId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("Core.Entities._LookUps.ClientStatus", "ClientStatus")
                         .WithMany()
@@ -730,6 +778,8 @@ namespace Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Address");
+
+                    b.Navigation("BurialSociety");
 
                     b.Navigation("ClientStatus");
 

@@ -15,6 +15,6 @@ public class FuneralService : BaseEntity
     public DateTime? ModifiedDate { get; set; }
     public string? ModifiedBy  { get; set; }
 
-    public required Client Client { get; set; }
-    public required ServiceType ServiceType { get; set; }  
+    public Client? Client { get; set; }
+    public ServiceType? ServiceType { get; set; }  
 }

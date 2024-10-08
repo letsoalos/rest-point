@@ -1,0 +1,50 @@
+[
+  {
+    "Name": "Early Bird Discount",
+    "Description": "A discount for early payments within the first 10 days of the billing cycle.",
+    "PercentageOff": 10.00,
+    "IsActive": true,
+    "StartDate": "2024-01-01T00:00:00",
+    "EndDate": "2024-12-31T23:59:59"
+  },
+  {
+    "Name": "Loyalty Discount",
+    "Description": "A discount for clients who have been with the company for more than 3 years.",
+    "PercentageOff": 5.00,
+    "IsActive": true,
+    "StartDate": "2024-03-01T00:00:00",
+    "EndDate": "2024-12-31T23:59:59"
+  },
+  {
+    "Name": "Bulk Payment Discount",
+    "Description": "Discount offered for making bulk payments for group members.",
+    "PercentageOff": 7.50,
+    "IsActive": true,
+    "StartDate": "2024-05-01T00:00:00",
+    "EndDate": "2024-12-31T23:59:59"
+  },
+  {
+    "Name": "Holiday Discount",
+    "Description": "A seasonal discount offered during the holiday period.",
+    "PercentageOff": 15.00,
+    "IsActive": false,
+    "StartDate": "2023-12-01T00:00:00",
+    "EndDate": "2024-01-05T23:59:59"
+  },
+  {
+    "Name": "Senior Citizen Discount",
+    "Description": "A discount for clients over 65 years of age.",
+    "PercentageOff": 12.00,
+    "IsActive": true,
+    "StartDate": "2024-01-01T00:00:00",
+    "EndDate": "2024-12-31T23:59:59"
+  },
+  {
+    "Name": "Referral Discount",
+    "Description": "A discount given to clients who refer new members.",
+    "PercentageOff": 8.00,
+    "IsActive": true,
+    "StartDate": "2024-06-01T00:00:00",
+    "EndDate": "2024-12-31T23:59:59"
+  }
+]

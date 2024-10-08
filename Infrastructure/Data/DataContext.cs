@@ -24,6 +24,8 @@ public class DataContext(DbContextOptions options) : DbContext(options)
     public DbSet<ServiceType> ServiceTypes { get; set; }
     public DbSet<PaymentStatus> PaymentStatuses { get; set; }
     public DbSet<PaymentFrequency> PaymentFrequencies { get; set; }
+    public DbSet<BurialSociety> BurialSocieties { get; set; }
+    public DbSet<PaymentMethod> PaymentMethods { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

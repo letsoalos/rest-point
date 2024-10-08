@@ -7,5 +7,5 @@ public class LateFee : BaseEntity
     public DateTime AppliedDate { get; set; }
     public required string Description { get; set; }
 
-    public required ClientPremium ClientPremium { get; set; }
+    public ClientPremium? ClientPremium { get; set; }
 }

@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "Identity Document"
+  },
+  {
+    "Name": "Passport"
+  },
+  {
+    "Name": "Driver's License"
+  },
+  {
+    "Name": "Birth Certificate"
+  },
+  {
+    "Name": "Permanent Residency"
+  },
+  {
+    "Name": "Work Permit"
+  },
+  {
+    "Name": "Student ID"
+  }
+]

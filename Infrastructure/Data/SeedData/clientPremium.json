@@ -1,0 +1,47 @@
+[
+  {
+    "ClientId": 1,
+    "PremiumPlanId": 1,
+    "TotalAmountPaid": 1200.00,
+    "StartDate": "2024-01-01T00:00:00",
+    "PaymentFrequencyId": 1,
+    "BurialSocietyId": 1,
+    "IsActive": true
+  },
+  {
+    "ClientId": 2,
+    "PremiumPlanId": 2,
+    "TotalAmountPaid": 600.00,
+    "StartDate": "2024-02-01T00:00:00",
+    "PaymentFrequencyId": 2,
+    "BurialSocietyId": null,
+    "IsActive": true
+  },
+  {
+    "ClientId": 3,
+    "PremiumPlanId": 1,
+    "TotalAmountPaid": 2400.00,
+    "StartDate": "2023-12-15T00:00:00",
+    "PaymentFrequencyId": 1,
+    "BurialSocietyId": 2,
+    "IsActive": false
+  },
+  {
+    "ClientId": 4,
+    "PremiumPlanId": 3,
+    "TotalAmountPaid": 800.00,
+    "StartDate": "2024-03-01T00:00:00",
+    "PaymentFrequencyId": 3,
+    "BurialSocietyId": null,
+    "IsActive": true
+  },
+  {
+    "ClientId": 5,
+    "PremiumPlanId": 2,
+    "TotalAmountPaid": 1500.00,
+    "StartDate": "2024-04-01T00:00:00",
+    "PaymentFrequencyId": 1,
+    "BurialSocietyId": 1,
+    "IsActive": true
+  }
+]

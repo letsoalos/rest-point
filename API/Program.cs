@@ -1,3 +1,4 @@
+using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<DataContext>(x => {
     x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -26,5 +29,21 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200","https://localhost:4200"));
+
+ try
+ {
+     using var scope = app.Services.CreateScope();
+     var services = scope.ServiceProvider;
+     var context = services.GetRequiredService<DataContext>();
+     await context.Database.MigrateAsync();
+     await DataContextSeed.SeedAsync(context);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex);
+    throw;
+ }
 
 app.Run();

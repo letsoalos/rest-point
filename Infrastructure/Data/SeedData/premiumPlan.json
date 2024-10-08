@@ -1,0 +1,34 @@
+[
+  {
+    "Name": "Basic Plan",
+    "Description": "Covers minimal funeral expenses with a coverage limit of R5,000.",
+    "Amount": 50.00,
+    "CoverageAmount": 5000.00,
+    "IsActive": true,
+    "CreatedDate": "2023-01-01T00:00:00"
+  },
+  {
+    "Name": "Standard Plan",
+    "Description": "Provides moderate coverage for funeral expenses with a coverage limit of R10,000.",
+    "Amount": 100.00,
+    "CoverageAmount": 10000.00,
+    "IsActive": true,
+    "CreatedDate": "2023-05-01T00:00:00"
+  },
+  {
+    "Name": "Gold Plan",
+    "Description": "Covers all major funeral expenses with a coverage limit of R20,000.",
+    "Amount": 150.00,
+    "CoverageAmount": 20000.00,
+    "IsActive": true,
+    "CreatedDate": "2023-09-01T00:00:00"
+  },
+  {
+    "Name": "Premium Plan",
+    "Description": "Comprehensive coverage with additional benefits up to R50,000.",
+    "Amount": 300.00,
+    "CoverageAmount": 50000.00,
+    "IsActive": true,
+    "CreatedDate": "2024-01-01T00:00:00"
+  }
+]
